@@ -30,7 +30,6 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.param1 = params['param1'];
-      console.log("param--------->",this.param1);
       this.getData();
     });
   }
@@ -60,7 +59,6 @@ export class BookDetailsComponent implements OnInit {
           }
           this.showSpinner = false;
           this.loaded = true;
-          console.log("this.bookData-------->",this.bookData);
         },
         error => {
           console.error("error--->",error);

@@ -62,7 +62,6 @@ export class AuthorComponent {
 
   fetchBooks(event: any) {//https://openlibrary.org/search.json?author=Forsh, Olʹga
     
-    console.log('Value changed---------------', event.value);
     this.booksList = [];
     this.showSpinner = true;
     this.initialSelect = false;
@@ -71,11 +70,9 @@ export class AuthorComponent {
     this.myservice.getData("https://openlibrary.org/search.json?author="+event.value).subscribe(
       response => {
         this.booksList = response.docs;
-        console.log("response---->",response);
         this.showSpinner = false;
         if(this.booksList.length != 0 ){
           this.booksCount = this.booksList.length;
-          console.log(this.booksList,"------",this.booksCount)
         }else{
           this.noDataFound = true;
         }

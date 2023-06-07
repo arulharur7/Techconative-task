@@ -47,6 +47,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .fw-500{
     font-weight: 500;
   }
+  
+  .mat-typography{
+    overflow: hidden;
+  }
 
   @media (max-width: 768px) {
     .display-start, .display-handle, .display-center{
@@ -72,4 +76,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       align-items: center;
       justify-content: center;
     }
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;   
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
