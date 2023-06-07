@@ -1,0 +1,15 @@
+.detail-content{
+    height: calc(100vh - 100px);
+}
+
+.go-back{
+    background-color: #7b1fa2;
+    color: #fff;
+    padding: 5px 10px 5px 3px;
+}
+
+.go-back:hover{
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.4s;
+}
+

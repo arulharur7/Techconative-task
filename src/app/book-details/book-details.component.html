@@ -1,0 +1,35 @@
+<div class="w-100 p-4">
+    <div class="border rounded detail-content">
+
+        <div class="m-3 p-0">
+            <button class="btn display-center go-back" routerLink="/author"> <mat-icon>keyboard_arrow_left</mat-icon> Go back</button>
+        </div>
+
+        <div *ngIf="showSpinner" class="my-5 display-center" style="height: 400px;">
+            <mat-spinner></mat-spinner>
+        </div>
+
+        <div *ngIf="showAlert" class="alert alert-danger alert-dismissible mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Oops!</strong> An error occured! Please try again.
+        </div>
+
+        <div *ngIf="loaded" class="display-start m-3">
+            <div class="col-12 col-md-3 position-relative">
+                <img src="{{cover}}" class="rounded w-100" />
+                <span *ngIf="noCover" class="position-absolute fw-500" style="top: 40%;left: 25%;">Cover image not found</span>
+            </div>
+            <div class="col-12 col-md-7 p-4">
+                <div><span class="fw-500">Author : </span><span>{{author}}</span></div>
+                <div class="py-2"><span class="fw-500" >Description : </span><span>{{desc}}</span></div>
+                <div class="py-2"><span class="fw-500" >Title : </span><span>{{title}}</span></div>
+                <div class="py-2"><span class="fw-500" >Contents : </span><span>{{contentdisplay}}</span></div>
+            </div>
+        </div>
+
+        <div *ngIf="codeNotFound" class="my-5 display-center" style="height: 500px;">
+            <h2 class="m-0">ISBN code not found</h2>
+        </div>
+
+    </div>
+</div>

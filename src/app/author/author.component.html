@@ -1,0 +1,64 @@
+<div class="container mt-4">
+
+    <div class="row">
+        <select2 [data]="authorsList"  (update)="fetchBooks($event)" placeholder="Select an Author" class="p-0 custom-select2"> 
+            
+        </select2>
+    </div>
+
+    <div *ngIf="showAlert" class="alert alert-danger alert-dismissible mt-5">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Oops!</strong> An error occured! Please try again.
+    </div>
+
+    <div *ngIf="showSpinner" class="my-5 display-center" style="height: 500px;">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <div *ngIf="initialSelect" class="my-5 display-center" style="height: 500px;">
+        <h2 class="m-0">Please select an author</h2>
+    </div>
+
+    <div *ngIf="noDataFound" class="my-5 display-center" style="height: 500px;">
+        <h2 class="m-0">No Data Found</h2>
+    </div>
+
+    <div #booksData *ngIf="!showSpinner" class="cards mt-4">
+        <div class="cards_item" *ngFor="let book of booksList | slice:0:5" style="min-height: 245px;min-width: 425px;">
+            <div class="card c-pointer w-100" [routerLink]="['/book-details', book.isbn?.slice(-1)[0]]">
+                <div class="card_content">
+                    <div class="two-line-text-header my-2">
+                        <h2 class="card_title m-0 "  [matTooltip]="book.title" matTooltipPosition="below"><span style="color:#000">Title : </span>{{book.title}}</h2>
+                    </div>
+                    <div class="two-line-text my-2" [matTooltip]="book.isbn" matTooltipPosition="below">
+                        <span class="fw-500">ISBN : </span><span class="card_text" *ngFor="let isbn of book.isbn; let last = last">{{isbn!="" ? isbn : "No ISBN found"}}
+                            <ng-container *ngIf="!last">, </ng-container>
+                        </span>
+                    </div>    
+                    <div class="two-line-text my-2" [matTooltip]="book.publisher" matTooltipPosition="below">
+                        <span class="fw-500">Publishers : </span>
+                        <span *ngFor="let pub of book.publisher; let last = last" class="card_text">{{pub!="" ? pub : "No publishers found"}}
+                            <ng-container *ngIf="!last">, </ng-container>
+                        </span>
+                    </div>    
+                </div>
+            </div>
+            
+        </div>
+        <br>
+        <div *ngIf="booksCount > 5" class="">
+            
+            
+            
+        </div>
+        <div *ngIf="booksCount > 5" class="cards_item fw-500">
+            <div class="w-100 display-handle">
+                <p class="">Author has more than 5 books.</p>
+            </div>
+        </div>
+        
+    </div>    
+    
+
+
+</div>

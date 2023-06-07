@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-progress-spinner{
+    width: 40px;
+    height: 40px;
+}
+
+.select2-search__field{
+    outline: none;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background: #0000;
+}
+
+.two-line-text-header {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 5em;
+    line-height: 1em;
+  }
+
+  .two-line-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+    line-height: 1em;
+  }
+
+  .c-pointer{
+    cursor: pointer;
+  }
+
+  .border{
+    border: 1px solid #b2aeae !important;
+  }
+
+  .fw-500{
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .display-start, .display-handle, .display-center{
+      display: block;
+    }
+  
+    
+  }
+  @media (min-width: 768px){
+    .display-start{
+      display: flex;
+      align-items: start;
+      justify-content: start;
+    }
+  
+    .display-handle{
+      display: flex;
+      align-items: end;
+      justify-content: end;
+    }
+    .display-center{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
